@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Heading, VStack } from "@chakra-ui/react";
+import { Avatar, Heading, VStack, Text } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 
 const greeting = "Hello, I am Pete!";
@@ -15,6 +15,17 @@ const LandingSection = () => (
     isDarkBackground
     backgroundColor="#2A4365"
   >
+    <VStack>
+      <Avatar name="Segun Adebayo"
+      src="https://i.pravatar.cc/150?img=7" 
+      >
+      </Avatar>
+      
+      <Text>Hello, I am Pete!</Text>
+      
+      <Heading>A frontend developer specialised in React</Heading>
+
+    </VStack>
 
   </FullScreenSection>
 );
