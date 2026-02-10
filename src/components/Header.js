@@ -66,8 +66,8 @@ const Header = () => {
           <nav>
             {/* Add social media links based on the `socials` data */}
             <HStack>
-            {socials.map(function (social) {
-                return <a href={social.url}>
+            {socials.map(function (social, index) {
+                return <a key={index} href={social.url}>
                     <FontAwesomeIcon icon={social.icon} size="2x" />
                   </a>
               })
