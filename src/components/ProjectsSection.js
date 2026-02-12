@@ -53,6 +53,7 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
+            borderRadius="xl" 
           />
         ))}
       </Box>
