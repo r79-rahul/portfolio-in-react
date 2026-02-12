@@ -32,18 +32,16 @@ const LandingSection = () => {
       submit('', values);
     },
     validationSchema: Yup.object({
-      firstName: Yup.string().required("Name is required"),
+      firstName: Yup.string().required("Required"),
       email: Yup.string()
         .email("Invalid email address")
-        .required("Email is required"),
-      type: Yup.string().required("Type is required"),
-      comment: Yup.string().required("Message is required"),
+        .required("Required"),
+      type: Yup.string().required("Required"),
+      comment: Yup.string().required("Required").min(25, "Must be at least 25 characters"),
     }),
   });
 
   useEffect(() => {
-    console.log('frmk', formik.getFieldProps("firstName"));
-    
     if (response) {
       onOpen(response.type, formik.values.firstName, response.message);
       if (response.type === "success") {
