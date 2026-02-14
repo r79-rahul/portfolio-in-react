@@ -33,6 +33,31 @@ const socials = [
 ];
 
 const Header = () => {
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) { // scrolling down
+        setShow(false);
+      } else {
+        setShow(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
+
+
   const handleClick = (anchor) => (e) => {
     e.preventDefault();
     const id = `${anchor}-section`;
@@ -52,9 +77,10 @@ const Header = () => {
       top={0}
       left={0}
       right={0}
-      translateY={0}
+
+      transform={show ? "translateY(0)" : "translateY(-100%)"}
       transitionProperty="transform"
-      transitionDuration=".3s"
+      transitionDuration=".5s"
       transitionTimingFunction="ease-in-out"
       backgroundColor="#18181b"
     >
