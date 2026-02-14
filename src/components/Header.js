@@ -16,7 +16,7 @@ const socials = [
   },
   {
     icon: faGithub,
-    url: "https://github.com/r79-rahul",
+    url: "https://github.com/",
   },
   {
     icon: faLinkedin,
@@ -105,6 +105,7 @@ const Header = () => {
           <nav>
             <HStack spacing={8}>
               {/* Add links to Projects and Contact me section */}
+              <Link href="#landing-section" onClick={handleClick('landing')}>Home</Link>
               <Link href="#contactme-section" onClick={handleClick('contactme')}>Contact Me</Link>
               <Link href="#projects-section" onClick={handleClick('projects')}>Projects</Link>
             </HStack>
